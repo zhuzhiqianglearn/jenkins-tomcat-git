@@ -1,0 +1,26 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Spring MVC Application</display-name>
+  <servlet>
+    <servlet-name>mymvc-dispatcher</servlet-name>
+    <!--声明mvc控制器DispatcherServlet-->
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <!--声明mvc配置文件-->
+    <!--如果不配置该选项，则默认扫描 ‘servlet-name’-servlet.xml文件 ，
+    以该web.xml为例，如不配置，默认访问 mymvc-dispatcher-servlet.xml-->
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>WEB-INF/mymvc.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>mymvc-dispatcher</servlet-name>
+    <!--请求路径-->
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+</web-app>

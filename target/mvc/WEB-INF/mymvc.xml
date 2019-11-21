@@ -1,0 +1,44 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.springapp.mvc"/>
+    <context:component-scan base-package="demo"/>
+    <!--<import resource="jdbc.xml"/>-->
+    <!--<import resource="BasicDataSource.xml"/>-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+    </bean>
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">-->
+    <!--<property name="driverClassName">-->
+    <!--<value>com.mysql.jdbc.Driver</value>-->
+    <!--</property>-->
+    <!--<property name="url">-->
+    <!--<value>jdbc:mysql://localhost:3306/cs?useUnicode=true&rewriteBatchedStatements=true&characterEncoding=UTF-8</value>-->
+    <!--</property>-->
+    <!--<property name="username">-->
+    <!--<value>root</value>-->
+    <!--</property>-->
+    <!--<property name="password">-->
+    <!--<value>root</value>-->
+    <!--</property>-->
+    <!--</bean>-->
+    <!--<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
+    <!--<property name="dataSource">-->
+    <!--<ref bean="dataSource" />-->
+    <!--</property>-->
+    <!--</bean>-->
+
+    <!--<!– 这里是自定义的数据库基础操作类 –>-->
+    <!--<bean id="sqlBaseDAO" class="demo.BaseDAOImpl">-->
+    <!--<property name="jdbcTemplate">-->
+    <!--<ref bean="jdbcTemplate" />-->
+    <!--</property>-->
+    <!--</bean>-->
+
+</beans>
